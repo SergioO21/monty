@@ -127,7 +127,7 @@ void is_number(stack_t *stack, unsigned int line_number, char *token)
 
 	while (token[i])
 	{
-		if (token[i] < 48 && token[i] > 57)
+		if (token[i] < 48 || token[i] > 57)
 		{
 			fprintf(stderr, "L%d: usage: push integer", line_number);
 			frees(stack);
