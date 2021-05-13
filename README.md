@@ -10,7 +10,7 @@ You will find the project where we built our own version of a monty bytecode int
 <h2>How to use it</h2>
 
  - Clone this repository into your OS with [monty´s](https://github.com/SergioO21/monty.git)
- - -   Compiler :  `GCC version 4.8.4 (Ubuntu 4.8.4-2ubuntu1~14.04.4)`
+ -    Compiler :  `GCC version 4.8.4 (Ubuntu 4.8.4-2ubuntu1~14.04.4)`
 -   gcc -Wall -Werror -Wextra -pedantic *.c -o monty
 -   Run:  `./monty [monty_file]
 
