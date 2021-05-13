@@ -29,8 +29,8 @@ You will find the project where we built our own version of a monty bytecode int
  - `_mod` - computes the rest of the division of the second top element of the stack by the top element of the stack.
  - `_nop` - don’t do anything.
  - `_pchar` - prints the char at the top of the stack, followed by a new line.
- - `op_pstr` - prints the string starting at the top of the stack, followed by a new line
- - `op_rotl` - rotate stack to the botton.
+ - `_pstr` - prints the string starting at the top of the stack, followed by a new line
+ - `_rotl` - rotate stack to the botton.
  - `frees` - frees memory.
 <h2> Authors</h2>
 
