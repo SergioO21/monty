@@ -13,8 +13,8 @@
 void _mod(stack_t **stack, unsigned int line_number)
 {
 	stack_t *delete = NULL;
-	(void) line_number;
 	int mod = 0;
+	(void) line_number;
 
 	mod = (*stack)->next->n % (*stack)->n;
 

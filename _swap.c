@@ -12,8 +12,8 @@
 
 void _swap(stack_t **stack, unsigned int line_number)
 {
-	(void) line_number;
 	int swaper;
+	(void) line_number;
 
 	swaper = (*stack)->next->n;
 

@@ -13,8 +13,8 @@
 void _sub(stack_t **stack, unsigned int line_number)
 {
 	stack_t *delete = NULL;
-	(void) line_number;
 	int sub = 0;
+	(void) line_number;
 
 	sub = (*stack)->next->n - (*stack)->n;
 

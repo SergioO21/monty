@@ -14,8 +14,8 @@
 void _div(stack_t **stack, unsigned int line_number)
 {
 	stack_t *delete = NULL;
-	(void) line_number;
 	int div = 0;
+	(void) line_number;
 
 	div = (*stack)->next->n / (*stack)->n;
 
