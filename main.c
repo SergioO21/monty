@@ -82,7 +82,7 @@ void parse_execute(FILE *monty_file, instruction_t instructions[])
 			}
 		}
 
-		if (enter == 0)
+		if (enter == 0 && token[0] != '#')
 		{
 			fprintf(stderr, "L%d: unknown instruction %s\n", line_number, token);
 			frees(stack);
