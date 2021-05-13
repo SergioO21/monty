@@ -1,4 +1,4 @@
-<p align="center">
+<p align="right">
  
 <img src ="https://vignette.wikia.nocookie.net/bravefrontierglobal/images/c/c2/Unit_ills_full_10563.png/revision/latest?cb=20141224173942" width="250" height="250" />
 
