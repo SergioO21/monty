@@ -63,7 +63,7 @@ void parse_execute(FILE *monty_file, instruction_t instructions[])
 	while (fgets(line, sizeof(line), monty_file))
 	{
 
-		token = strtok(line, " \n");
+		token = strtok(line, LIMITERS);
 
 		for (i = 0; i < 12; i++)
 		{
