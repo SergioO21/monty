@@ -13,14 +13,8 @@
 void _mul(stack_t **stack, unsigned int line_number)
 {
 	stack_t *delete = NULL;
+	(void) line_number;
 	int mul = 0;
-
-	if (!*stack || !(*stack)->next)
-	{
-		fprintf(stderr, "L%d: can't mul, stack too short\n", line_number);
-		frees(*stack);
-		exit(2);
-	}
 
 	mul = (*stack)->next->n * (*stack)->n;
 

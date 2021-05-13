@@ -13,14 +13,8 @@
 void _sub(stack_t **stack, unsigned int line_number)
 {
 	stack_t *delete = NULL;
+	(void) line_number;
 	int sub = 0;
-
-	if (!*stack || !(*stack)->next)
-	{
-		fprintf(stderr, "L%d: can't sub, stack too short\n", line_number);
-		frees(*stack);
-		exit(2);
-	}
 
 	sub = (*stack)->next->n - (*stack)->n;
 

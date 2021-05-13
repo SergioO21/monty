@@ -74,9 +74,10 @@ void parse_execute(FILE *monty_file, instruction_t instructions[])
 				if (i == 0)
 				{
 					token = strtok(NULL, LIMITERS);
-					is_number(stack, line_number, token);
+					is_number(stack, line_number, token, monty_file);
 					n = atoi(token);
 				}
+				handle1(&stack, line_number, monty_file, i);
 				instructions[i].f(&stack, line_number);
 				enter = 1;
 			}
@@ -86,6 +87,7 @@ void parse_execute(FILE *monty_file, instruction_t instructions[])
 		{
 			fprintf(stderr, "L%d: unknown instruction %s\n", line_number, token);
 			frees(stack);
+			fclose(monty_file);
 			exit(2);
 		}
 		line_number++;
@@ -116,12 +118,13 @@ void frees(stack_t *stack)
  *
  * @token: String to compare.
  * @stack: Stack.
- * @line_number: Line number.
+ * @lnumber: Line number.
+ * @mfile: Monty file.
  *
  * Return: Nothing.
  */
 
-void is_number(stack_t *stack, unsigned int line_number, char *token)
+void is_number(stack_t *stack, unsigned int lnumber, char *token, FILE *mfile)
 {
 	int i = 0;
 
@@ -129,8 +132,9 @@ void is_number(stack_t *stack, unsigned int line_number, char *token)
 	{
 		if (token[i] < 48 || token[i] > 57)
 		{
-			fprintf(stderr, "L%d: usage: push integer\n", line_number);
+			fprintf(stderr, "L%d: usage: push integer\n", lnumber);
 			frees(stack);
+			fclose(mfile);
 			exit(2);
 		}
 		i++;

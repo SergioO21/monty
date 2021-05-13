@@ -41,9 +41,12 @@ typedef struct instruction_s
 int n;
 
 /** Prototypes */
+void is_number(stack_t *stack, unsigned int lnumber, char *token, FILE *mfile);
+void handle1(stack_t **stack, unsigned int line_number, FILE *m_file, int i);
+int handle2(stack_t **stack, unsigned int line_number, int i);
+int handle3(stack_t **stack, unsigned int line_number, int i);
+int handle4(stack_t **stack, unsigned int line_number, int i);
 void parse_execute(FILE *monty_file, instruction_t instructions[]);
-void frees(stack_t *stack);
-void is_number(stack_t *stack, unsigned int line_number, char *token);
 void _pall(stack_t **stack, unsigned int line_number);
 void _pint(stack_t **stack, unsigned int line_number);
 void _pop(stack_t **stack, unsigned int line_number);
@@ -57,5 +60,6 @@ void _mod(stack_t **stack, unsigned int line_number);
 void _pchar(stack_t **stack, unsigned int line_number);
 void _nop(stack_t **stack, unsigned int line_number);
 void _pstr(stack_t **stack, unsigned int line_number);
+void frees(stack_t *stack);
 
 #endif /* Monty Library */
