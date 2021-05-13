@@ -129,7 +129,7 @@ void is_number(stack_t *stack, unsigned int lnumber, char *token, FILE *mfile)
 {
 	int i = 0;
 
-	if (token[0] == '-')
+	if (token[0] == '-' && token[1])
 		i++;
 
 	while (token[i])
