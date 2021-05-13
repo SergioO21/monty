@@ -24,7 +24,7 @@ int main(int argc, char *argv[])
 		{"pstr", _pstr}
 	};
 
-	if (argc == 1)
+	if (argc != 2)
 	{
 		fprintf(stderr, "USAGE: monty file\n");
 		exit(2);
@@ -86,6 +86,7 @@ void parse_execute(FILE *monty_file, instruction_t instructions[])
 		{
 			fprintf(stderr, "L%d: unknown instruction %s\n", line_number, token);
 			frees(stack);
+			fclose(monty_file);
 			exit(2);
 		}
 		line_number++;
@@ -129,7 +130,7 @@ void is_number(stack_t *stack, unsigned int line_number, char *token)
 	{
 		if (token[i] < 48 || token[i] > 57)
 		{
-			fprintf(stderr, "L%d: usage: push integer", line_number);
+			fprintf(stderr, "L%d: usage: push integer\n", line_number);
 			frees(stack);
 			exit(2);
 		}
