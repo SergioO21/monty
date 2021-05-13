@@ -20,7 +20,8 @@ int main(int argc, char *argv[])
 		{"swap", _swap}, {"add", _add},
 		{"sub", _sub}, {"div", _div},
 		{"mul", _mul}, {"mod", _mod},
-		{"pchar", _pchar}, {"nop", _nop}
+		{"pchar", _pchar}, {"nop", _nop},
+		{"pstr", _pstr}
 	};
 
 	if (argc == 1)
@@ -58,32 +59,34 @@ void parse_execute(FILE *monty_file, instruction_t instructions[])
 	stack_t *stack = NULL;
 	char *token = NULL;
 	char line[100];
-	int i;
+	int i, enter;
 
 	while (fgets(line, sizeof(line), monty_file))
 	{
+		enter = 0;
 
 		token = strtok(line, LIMITERS);
 
-		for (i = 0; i < 12; i++)
+		for (i = 0; i < 13; i++)
 		{
 			if (strcmp(token, instructions[i].opcode) == 0)
 			{
 				if (i == 0)
 				{
 					token = strtok(NULL, " \n");
-
-					if (atoi(token) == 0)
-					{
-						fprintf(stderr, "L%d: usage: push integer", line_number);
-						frees(stack);
-						exit(2);
-					}
-
+					is_number(stack, line_number, token);
 					n = atoi(token);
 				}
 				instructions[i].f(&stack, line_number);
+				enter = 1;
 			}
+		}
+
+		if (enter == 0)
+		{
+			fprintf(stderr, "L%d: unknown instruction %s\n", line_number, token);
+			frees(stack);
+			exit(2);
 		}
 		line_number++;
 	}
@@ -105,5 +108,31 @@ void frees(stack_t *stack)
 		delete = stack;
 		stack = stack->next;
 		free(delete);
+	}
+}
+
+/**
+ * is_number - Checks if a string is a number.
+ *
+ * @token: String to compare.
+ * @stack: Stack.
+ * @line_number: Line number.
+ *
+ * Return: Nothing.
+ */
+
+void is_number(stack_t *stack, unsigned int line_number, char *token)
+{
+	int i = 0;
+
+	while (token[i])
+	{
+		if (token[i] < 48 && token[i] > 57)
+		{
+			fprintf(stderr, "L%d: usage: push integer", line_number);
+			frees(stack);
+			exit(2);
+		}
+		i++;
 	}
 }

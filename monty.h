@@ -35,6 +35,7 @@ typedef struct instruction_s
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <ctype.h>
 
 /** Global Variable */
 int n;
@@ -42,6 +43,7 @@ int n;
 /** Prototypes */
 void parse_execute(FILE *monty_file, instruction_t instructions[]);
 void frees(stack_t *stack);
+void is_number(stack_t *stack, unsigned int line_number, char *token);
 void _pall(stack_t **stack, unsigned int line_number);
 void _pint(stack_t **stack, unsigned int line_number);
 void _pop(stack_t **stack, unsigned int line_number);
@@ -54,5 +56,6 @@ void _mul(stack_t **stack, unsigned int line_number);
 void _mod(stack_t **stack, unsigned int line_number);
 void _pchar(stack_t **stack, unsigned int line_number);
 void _nop(stack_t **stack, unsigned int line_number);
+void _pstr(stack_t **stack, unsigned int line_number);
 
 #endif /* Monty Library */
