@@ -1,4 +1,9 @@
-![monty](https://vignette.wikia.nocookie.net/bravefrontierglobal/images/c/c2/Unit_ills_full_10563.png/revision/latest?cb=20141224173942)
+<p align="center">
+ 
+<img src ="https://vignette.wikia.nocookie.net/bravefrontierglobal/images/c/c2/Unit_ills_full_10563.png/revision/latest?cb=20141224173942" width="250" height="250" />
+
+</p>
+
 ![](https://www.holbertonschool.com/holberton-logo.png)
 <h1>MONTY INTERPRETER</h1>
 You will find the project where we built our own version of a monty bytecode interpreter. Holberton School Barranquilla Cohort 14.
