@@ -74,6 +74,7 @@ void parse_execute(FILE *monty_file, instruction_t instructions[])
 				if (i == 0)
 				{
 					token = strtok(NULL, LIMITERS);
+					token_error(stack, line_number, monty_file, token);
 					is_number(stack, line_number, token, monty_file);
 					n = atoi(token);
 				}

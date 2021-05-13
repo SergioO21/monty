@@ -41,6 +41,7 @@ typedef struct instruction_s
 int n;
 
 /** Prototypes */
+void token_error(stack_t *stack, unsigned int number, FILE *file, char *tok);
 void is_number(stack_t *stack, unsigned int lnumber, char *token, FILE *mfile);
 void handle1(stack_t **stack, unsigned int line_number, FILE *m_file, int i);
 int handle2(stack_t **stack, unsigned int line_number, int i);
