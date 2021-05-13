@@ -73,7 +73,7 @@ void parse_execute(FILE *monty_file, instruction_t instructions[])
 			{
 				if (i == 0)
 				{
-					token = strtok(NULL, " \n");
+					token = strtok(NULL, LIMITERS);
 					is_number(stack, line_number, token);
 					n = atoi(token);
 				}
@@ -86,7 +86,6 @@ void parse_execute(FILE *monty_file, instruction_t instructions[])
 		{
 			fprintf(stderr, "L%d: unknown instruction %s\n", line_number, token);
 			frees(stack);
-			fclose(monty_file);
 			exit(2);
 		}
 		line_number++;
