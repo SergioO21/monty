@@ -10,7 +10,7 @@
  *
  */
 
-void _sub(stack_t **stack, unsigned int line_number)
+void _mul(stack_t **stack, unsigned int line_number)
 {
 	stack_t *delete = NULL;
 	int mul = 0;
