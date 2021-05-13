@@ -27,7 +27,7 @@ int main(int argc, char *argv[])
 	if (argc != 2)
 	{
 		fprintf(stderr, "USAGE: monty file\n");
-		exit(2);
+		exit(EXIT_FAILURE);
 	}
 
 	monty_file = fopen(argv[1], "r");
@@ -35,7 +35,7 @@ int main(int argc, char *argv[])
 	if (!monty_file)
 	{
 		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
-		exit(2);
+		exit(EXIT_FAILURE);
 	}
 
 	parse_execute(monty_file, instructions);
@@ -88,7 +88,7 @@ void parse_execute(FILE *monty_file, instruction_t instructions[])
 			fprintf(stderr, "L%d: unknown instruction %s\n", line_number, token);
 			frees(stack);
 			fclose(monty_file);
-			exit(2);
+			exit(EXIT_FAILURE);
 		}
 		line_number++;
 	}
@@ -135,7 +135,7 @@ void is_number(stack_t *stack, unsigned int lnumber, char *token, FILE *mfile)
 			fprintf(stderr, "L%d: usage: push integer\n", lnumber);
 			frees(stack);
 			fclose(mfile);
-			exit(2);
+			exit(EXIT_FAILURE);
 		}
 		i++;
 	}

@@ -48,7 +48,7 @@ void handle1(stack_t **stack, unsigned int line_number, FILE *m_file, int i)
 	{
 		frees(*stack);
 		fclose(m_file);
-		exit(2);
+		exit(EXIT_FAILURE);
 	}
 }
 
