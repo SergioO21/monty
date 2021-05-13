@@ -64,32 +64,33 @@ void parse_execute(FILE *monty_file, instruction_t instructions[])
 	while (fgets(line, sizeof(line), monty_file))
 	{
 		enter = 0;
-
 		token = strtok(line, LIMITERS);
 
-		for (i = 0; i < 13; i++)
+		if (token)
 		{
-			if (strcmp(token, instructions[i].opcode) == 0)
+			for (i = 0; i < 13; i++)
 			{
-				if (i == 0)
+				if (strcmp(token, instructions[i].opcode) == 0)
 				{
-					token = strtok(NULL, LIMITERS);
-					token_error(stack, line_number, monty_file, token);
-					is_number(stack, line_number, token, monty_file);
-					n = atoi(token);
+					if (i == 0)
+					{
+						token = strtok(NULL, LIMITERS);
+						token_error(stack, line_number, monty_file, token);
+						is_number(stack, line_number, token, monty_file);
+						n = atoi(token);
+					}
+					handle1(&stack, line_number, monty_file, i);
+					instructions[i].f(&stack, line_number);
+					enter = 1;
 				}
-				handle1(&stack, line_number, monty_file, i);
-				instructions[i].f(&stack, line_number);
-				enter = 1;
 			}
-		}
-
-		if (enter == 0 && token[0] != '#')
-		{
-			fprintf(stderr, "L%d: unknown instruction %s\n", line_number, token);
-			frees(stack);
-			fclose(monty_file);
-			exit(EXIT_FAILURE);
+			if (enter == 0 && token[0] != '#')
+			{
+				fprintf(stderr, "L%d: unknown instruction %s\n", line_number, token);
+				frees(stack);
+				fclose(monty_file);
+				exit(EXIT_FAILURE);
+			}
 		}
 		line_number++;
 	}
