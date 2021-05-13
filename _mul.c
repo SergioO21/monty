@@ -1,12 +1,12 @@
 #include "monty.h"
 
 /**
+ * _mul - This function subtracts the top element of the stack from
+ * the second top element of the stack.
+ * @stack: Double pointer to stack's head
+ * @line_number: line_number
  *
- *
- *
- *
- *
- *
+ * Return: nothing.
  *
  */
 

@@ -1,12 +1,12 @@
 #include "monty.h"
 
 /**
+ * _add - This function adds to the top two elements of the stack.
+ * @stack: Double pointer to the head of the Stack.
+ * @line_number: Line number.
  *
  *
- *
- *
- *
- *
+ * Return: nothing
  *
  */
 

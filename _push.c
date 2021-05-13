@@ -1,11 +1,11 @@
 #include "monty.h"
 
 /**
+ * _push - This function pushes an element to the stack.
  *
- *
- *
- *
- *
+ * @stack: Double pointer to the head of the Stack.
+ * @line_number: line number.
+ * Return: Nothing.
  *
  */
 

@@ -1,13 +1,13 @@
 #include "monty.h"
 
 /**
+ * _pchar -  prints the char at the top of the stack,
  *
+ * followed by a new line.
  *
- *
- *
- *
- *
- *
+ * @stack: Double pointer to the head of the Stack.
+ * @line_number: line number.
+ * Return: Nothing.
  */
 
 void _pchar(stack_t **stack, unsigned int line_number)

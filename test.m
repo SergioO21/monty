@@ -1,2 +1,5 @@
-push 4
-pchar
+push 1
+push 2
+push 3
+pall
+nop

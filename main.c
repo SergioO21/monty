@@ -1,13 +1,14 @@
 #include "monty.h"
 
 /**
- *
- *
- *
- *
- *
+ * main - Main function.
+ * @argc: The argument count.
+ * @argv: The argument vector.
+ * Description: This is the main function of the Monty project.
+ * Return: The success or error.
  *
  */
+
 
 int main(int argc, char *argv[])
 {
@@ -19,7 +20,7 @@ int main(int argc, char *argv[])
 		{"swap", _swap}, {"add", _add},
 		{"sub", _sub}, {"div", _div},
 		{"mul", _mul}, {"mod", _mod},
-		{"pchar", _pchar}
+		{"pchar", _pchar}, {"nop", _nop}
 	};
 
 	if (argc == 1)
@@ -44,11 +45,10 @@ int main(int argc, char *argv[])
 }
 
 /**
- *
- *
- *
- *
- *
+ * parse_execute - This function parse lines from a text.m
+ * @monty_file: File with monty steps to execute.
+ * @instructions: All the list-displays from functions.
+ * Return: nothing
  *
  */
 
@@ -65,7 +65,7 @@ void parse_execute(FILE *monty_file, instruction_t instructions[])
 
 		token = strtok(line, " \n");
 
-		for (i = 0; i < 11; i++)
+		for (i = 0; i < 12; i++)
 		{
 			if (strcmp(token, instructions[i].opcode) == 0)
 			{
@@ -91,11 +91,9 @@ void parse_execute(FILE *monty_file, instruction_t instructions[])
 }
 
 /**
- *
- *
- *
- *
- *
+ * frees - This function frees memory
+ * @stack: stack.
+ * Return: Nothing.
  */
 
 void frees(stack_t *stack)

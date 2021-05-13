@@ -1,12 +1,13 @@
 #include "monty.h"
 
 /**
+ * _div - This function divides the second top element
+ * of the stack by the top element of the stack.
+ * @stack: Double pointer to the head of the Stack.
+ * @line_number: Line number.
  *
  *
- *
- *
- *
- *
+ * Return: Nothing.
  *
  */
 
