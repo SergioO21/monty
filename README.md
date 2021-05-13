@@ -1,6 +1,6 @@
-<p align="right">
+<p align="center">
  
-<img src ="https://vignette.wikia.nocookie.net/bravefrontierglobal/images/c/c2/Unit_ills_full_10563.png/revision/latest?cb=20141224173942" width="250" height="250" />
+<img src ="https://38.media.tumblr.com/80b2bdf10e69e770dfd1139dadc4c3ec/tumblr_miazzmkLqB1rs9ul6o1_500.gif" width="250" height="250" />
 
 </p>
 
