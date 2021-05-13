@@ -129,6 +129,9 @@ void is_number(stack_t *stack, unsigned int lnumber, char *token, FILE *mfile)
 {
 	int i = 0;
 
+	if (token[0] == '-')
+		i++;
+
 	while (token[i])
 	{
 		if (token[i] < 48 || token[i] > 57)
