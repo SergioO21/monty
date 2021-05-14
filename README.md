@@ -9,10 +9,12 @@
 You will find the project where we built our own version of a monty bytecode interpreter. Holberton School Barranquilla Cohort 14.
 <h2>How to use it</h2>
 
- - Clone this repository into your OS with [monty´s](https://github.com/SergioO21/monty.git)
- -    Compiler :  `GCC version 4.8.4 (Ubuntu 4.8.4-2ubuntu1~14.04.4)`
--   gcc -Wall -Werror -Wextra -pedantic *.c -o monty
--   Run:  `./monty [monty_file]
+- Clone this repository into your OS with [monty´s](https://github.com/SergioO21/monty.git)
+ 
+- Compiler :  `GCC version 4.8.4 (Ubuntu 4.8.4-2ubuntu1~14.04.4)`
+
+-  Compile:  `gcc -Wall -Werror -Wextra -pedantic *.c -o monty`
+-   Run:  `./monty [monty_file]`
 
 <h2>Remake Functions</h2>
 
@@ -35,12 +37,7 @@ You will find the project where we built our own version of a monty bytecode int
  - `frees` - frees memory.
 <h2> Authors</h2>
 
-**Sergio Orejarena**
+ -  ***Sergio Orejarena*** / [Github](https://github.com/SergioO21) - [Twitter](https://twitter.com/SergioOR21) .
+ - ***Duvan Rodelo*** / [Github](https://github.com/Rode1o) - [Twitter](https://twitter.com/duvanrode1o) .
 
- - [ ] [@sergioOR21](https://twitter.com/SergioOR21)
- - [ ] [Github](https://github.com/SergioO21)
-
-**Duvan Rodelo**
- - [ ] [@duvanrode1o](https://twitter.com/duvanrode1o)
- - [ ] [Github](https://github.com/Rode1o)
-
+> Finished 13 / 05 / 2021
