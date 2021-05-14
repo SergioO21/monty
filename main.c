@@ -22,7 +22,8 @@ int main(int argc, char *argv[])
 		{"mul", _mul}, {"mod", _mod},
 		{"pchar", _pchar}, {"nop", _nop},
 		{"pstr", _pstr}, {"rotl", _rotl},
-		{"rotr", _rotr}
+		{"rotr", _rotr}, {"stack", stack},
+		{"queue", queue}, {"push2", _push2}
 	};
 
 	if (argc != 2)
@@ -60,7 +61,7 @@ void parse_execute(FILE *monty_file, instruction_t instructions[])
 	stack_t *stack = NULL;
 	char *token = NULL;
 	char line[100];
-	int i, enter;
+	int i, enter, stack_case = 0;
 
 	while (fgets(line, sizeof(line), monty_file))
 	{
@@ -69,7 +70,7 @@ void parse_execute(FILE *monty_file, instruction_t instructions[])
 
 		if (token)
 		{
-			for (i = 0; i < 15; i++)
+			for (i = 0; i < 18; i++)
 			{
 				if (strcmp(token, instructions[i].opcode) == 0)
 				{
@@ -81,17 +82,17 @@ void parse_execute(FILE *monty_file, instruction_t instructions[])
 						n = atoi(token);
 					}
 					handle1(&stack, line_number, monty_file, i);
+					if (stack_case == 1 && i == 0)
+						i = 17;
+					if (i == 16)
+						stack_case = 1;
+					else if (i == 15)
+						stack_case = 0;
 					instructions[i].f(&stack, line_number);
 					enter = 1;
 				}
 			}
-			if (enter == 0 && token[0] != '#')
-			{
-				fprintf(stderr, "L%d: unknown instruction %s\n", line_number, token);
-				frees(stack);
-				fclose(monty_file);
-				exit(EXIT_FAILURE);
-			}
+			comment(stack, line_number, token, monty_file, enter);
 		}
 		line_number++;
 	}
