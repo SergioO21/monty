@@ -13,10 +13,10 @@
 
 void _rotr(stack_t **stack, unsigned int line_number)
 {
-	stack_t *list = NULL;
+	stack_t *list, *head;
 	(void) line_number;
 
-	list = *stack;
+	list = head = *stack;
 
 	if (!*stack || !(*stack)->next)
 		return;
@@ -26,8 +26,8 @@ void _rotr(stack_t **stack, unsigned int line_number)
 
 	list->prev->next = NULL;
 	list->prev = NULL;
-	list->next = *stack;
-	(*stack)->prev = list;
+	list->next = head;
+	head->prev = list;
 	
 	*stack = list;
 }
