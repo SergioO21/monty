@@ -1,10 +1,12 @@
-<p align="right">
+<div>
+<a href="github.com/SergioO21/monty">
+  <img align="right" src="https://media.tenor.com/images/348ea9e69f31f6a0c7ffd8452bd94eda/tenor.gif" width="250" height="250"/>
+</a>
+<a href="https://www.holbertonschool.com/">
+  <img align="center" src="https://www.holbertonschool.com/holberton-logo.png"/>
+</a>
+</div>
 
-<img src ="https://media.tenor.com/images/348ea9e69f31f6a0c7ffd8452bd94eda/tenor.gif" width="250" height="250" />
-
-</p>
-
-![](https://www.holbertonschool.com/holberton-logo.png)
 <h1>MONTY INTERPRETER</h1>
 You will find the project where we built our own version of a monty bytecode interpreter. Holberton School Barranquilla Cohort 14.
 <h2>How to use it</h2>
@@ -35,8 +37,6 @@ You will find the project where we built our own version of a monty bytecode int
  - `_rotl` - rotate stack to the botton.
  - `_rotr` - rotates the stack to the bottom.
  - `frees` - frees memory.
- - `stack` - sets the format of the data to a stack (LIFO).
- - `queue` - sets the format of the data to a queue (FIFO).
 <h2> Authors</h2>
 
  -  ***Sergio Orejarena*** / [Github](https://github.com/SergioO21) - [Twitter](https://twitter.com/SergioOR21) .
