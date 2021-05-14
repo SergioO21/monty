@@ -13,21 +13,23 @@
 
 void _rotr(stack_t **stack, unsigned int line_number)
 {
-	stack_t *list, *head;
+	stack_t *list, *head, *turn;
 	(void) line_number;
-
-	list = head = *stack;
 
 	if (!stack || !*stack || !(*stack)->next)
 		return;
 
-	while (list->next)
-		list = list->next;
+	list = head = *stack;
 
-	list->prev->next = NULL;
-	list->prev = NULL;
-	list->next = head;
-	head->prev = list;
+	while ((list->next)->next)
+		list = list->next;
+	turn = list->next;
+
+	list->next = NULL;
+	turn->prev = NULL;
+
+	turn->next = head;
+	head->prev = turn;
 	
-	*stack = list;
+	*stack = turn;
 }
