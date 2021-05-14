@@ -1,5 +1,5 @@
 <div>
-<a href="github.com/SergioO21/monty">
+<a href="https://github.com/SergioO21/monty">
   <img align="right" src="https://media.tenor.com/images/348ea9e69f31f6a0c7ffd8452bd94eda/tenor.gif" width="250" height="250"/>
 </a>
 <a href="https://www.holbertonschool.com/">
