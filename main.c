@@ -21,7 +21,8 @@ int main(int argc, char *argv[])
 		{"sub", _sub}, {"div", _div},
 		{"mul", _mul}, {"mod", _mod},
 		{"pchar", _pchar}, {"nop", _nop},
-		{"pstr", _pstr}, {"rotl", _rotl}
+		{"pstr", _pstr}, {"rotl", _rotl},
+		{"rotr", _rotr}
 	};
 
 	if (argc != 2)
@@ -68,7 +69,7 @@ void parse_execute(FILE *monty_file, instruction_t instructions[])
 
 		if (token)
 		{
-			for (i = 0; i < 14; i++)
+			for (i = 0; i < 15; i++)
 			{
 				if (strcmp(token, instructions[i].opcode) == 0)
 				{
