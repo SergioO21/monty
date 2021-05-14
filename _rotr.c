@@ -28,4 +28,6 @@ void _rotr(stack_t **stack, unsigned int line_number)
 	list->prev = NULL;
 	list->next = *stack;
 	(*stack)->prev = list;
+	
+	*stack = list;
 }
