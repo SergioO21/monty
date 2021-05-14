@@ -31,6 +31,7 @@ You will find the project where we built our own version of a monty bytecode int
  - `_pchar` - prints the char at the top of the stack, followed by a new line.
  - `_pstr` - prints the string starting at the top of the stack, followed by a new line
  - `_rotl` - rotate stack to the botton.
+ - `_rotr` - rotates the stack to the bottom.
  - `frees` - frees memory.
 <h2> Authors</h2>
 
