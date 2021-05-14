@@ -30,6 +30,5 @@ void _rotr(stack_t **stack, unsigned int line_number)
 
 	turn->next = head;
 	head->prev = turn;
-	
 	*stack = turn;
 }
