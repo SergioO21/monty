@@ -18,7 +18,7 @@ void _rotr(stack_t **stack, unsigned int line_number)
 
 	list = head = *stack;
 
-	if (!*stack || !(*stack)->next)
+	if (!stack || !*stack || !(*stack)->next)
 		return;
 
 	while (list->next)
