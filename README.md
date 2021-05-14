@@ -37,6 +37,8 @@ You will find the project where we built our own version of a monty bytecode int
  - `_rotl` - rotate stack to the botton.
  - `_rotr` - rotates the stack to the bottom.
  - `frees` - frees memory.
+ - `stack` - sets the format of the data to a stack (LIFO).
+ - `queue` - sets the format of the data to a queue (FIFO).
 <h2> Authors</h2>
 
  -  ***Sergio Orejarena*** / [Github](https://github.com/SergioO21) - [Twitter](https://twitter.com/SergioOR21) .
